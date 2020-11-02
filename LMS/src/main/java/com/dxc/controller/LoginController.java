@@ -14,7 +14,7 @@ import com.dxc.service.RegistrationService;
 
 @RestController @CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api")
-public class RegistrationController {
+public class LoginController {
 	
 	@Autowired
 	private RegistrationService service;
@@ -44,6 +44,12 @@ public class RegistrationController {
 				   throw new Exception("bad credentials");
 			   }
 	   return userObj;
+	   
+	   
    }
+   
+   
+	  
+   }
+   
  
-}

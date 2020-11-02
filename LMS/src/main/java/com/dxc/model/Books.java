@@ -12,18 +12,19 @@ public class Books {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int bookid;
 	private String name;
 	private String author;
 	private String category;
 	private int price;
 	private int rackno;
-	private String status;
+	private int quantity;
 	public Books() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Books(int bookid, String name, String author, String category, int price, int rackno, String status) {
+	public Books(int bookid, String name, String author, String category, int price, int rackno, int quantity) {
 		super();
 		this.bookid = bookid;
 		this.name = name;
@@ -31,7 +32,7 @@ public class Books {
 		this.category = category;
 		this.price = price;
 		this.rackno = rackno;
-		this.status = status;
+		this.quantity = quantity;
 	}
 	public int getBookid() {
 		return bookid;
@@ -69,16 +70,16 @@ public class Books {
 	public void setRackno(int rackno) {
 		this.rackno = rackno;
 	}
-	public String getStatus() {
-		return status;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	@Override
 	public String toString() {
 		return "Books [bookid=" + bookid + ", name=" + name + ", author=" + author + ", category=" + category+", price=" + price
-				+ ", rackno=" + rackno + ", status=" + status + "]";
+				+ ", rackno=" + rackno + ", quantity=" + quantity + "]";
 	}
 	
 	

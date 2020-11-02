@@ -37,18 +37,25 @@ public class BookController {
 				 return (List<Books>) bookRepository.findAll();
 	}
 	
+	
+	
 	@GetMapping("/books/{id}")
-	public ResponseEntity<Books> getStudentById(@PathVariable(value = "id") int bookId)
+	public ResponseEntity<Books> getBookById(@PathVariable(value = "id") int bookId)
 	        throws ResourceNotFoundException {
 	        Books book = bookRepository.findById(bookId)
 	          .orElseThrow(() -> new ResourceNotFoundException("book not found for this id :: " + bookId));
 	        return ResponseEntity.ok().body(book);
-	    }
+	         }
+	
+	
 	@PostMapping("/books")
 	public Books createbook ( @RequestBody Books book)
 	{
 		return bookRepository.save(book);
 	}
+	
+	
+	
 	
 	@PutMapping("/books/{id}")
 	 public ResponseEntity<Books> updatebook(@PathVariable(value = "id") int bookId,
@@ -62,7 +69,7 @@ public class BookController {
 	        book.setAuthor(bookDetails.getAuthor());
 	        book.setCategory(bookDetails.getCategory());
 	        book.setPrice(bookDetails.getPrice());
-	        book.setStatus(bookDetails.getStatus());
+	        book.setQuantity(bookDetails.getQuantity());
 	        
 	        final Books updatedbook = bookRepository.save(book);
 	        return ResponseEntity.ok(updatedbook);

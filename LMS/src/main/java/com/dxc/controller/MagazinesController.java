@@ -59,6 +59,8 @@ public class MagazinesController {
 	        magazines.setRackno(magazinesDetails.getRackno());
 	        magazines.setName(magazinesDetails.getName());
 	        magazines.setDob(magazinesDetails.getDob());
+	        magazines.setPages(magazinesDetails.getPages());
+	        magazines.setPrice(magazinesDetails.getPrice());
 	       
 	        
 	        final Magazines updatedmagazines = magazineRepository.save(magazines);

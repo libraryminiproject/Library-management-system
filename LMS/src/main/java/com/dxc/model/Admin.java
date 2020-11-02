@@ -6,27 +6,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	 private int id;
-	 private String username;
+	 private String name;
 	 private String email;
 	 private String password;
-	 private String mobile;
-	 private String Address;
-	public User() {
+	 private int mobile;
+	 
+	public Admin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String username, String email, String password, String mobile, String address) {
+	public Admin(int id, String name, String email, String password, int mobile ) {
 		super();
 		this.id = id;
-		this.username = username;
+		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.mobile = mobile;
-		this.Address = address;
+		
 	}
 	public int getId() {
 		return id;
@@ -34,11 +34,11 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getEmail() {
 		return email;
@@ -52,22 +52,17 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getMobile() {
+	public int getMobile() {
 		return mobile;
 	}
-	public void setMobile(String mobile) {
+	public void setMobile(int mobile) {
 		this.mobile = mobile;
 	}
-	public String getAddress() {
-		return Address;
-	}
-	public void setAddress(String address) {
-		Address = address;
-	}
+	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password + ", mobile="
-				+ mobile + ", Address=" + Address + "]";
+		return "Register [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", mobile="
+				+ mobile + "]";
 	}
 	
 }

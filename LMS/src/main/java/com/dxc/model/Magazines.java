@@ -10,6 +10,8 @@ public class Magazines {
 	@Id
 	private String name;
 	private Date dob;
+	private int pages;
+	private int price;
 	private int rackno;
 
 	public Magazines() {
@@ -17,10 +19,12 @@ public class Magazines {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Magazines(String magazine, String dobth, int rackno) throws ParseException {
+	public Magazines(String magazine, String dobth, int rackno,int pages,int price) throws ParseException {
 		super();
-		this.name = magazine;
+		this.name=name;
 		this.rackno = rackno;
+		this.pages=pages;
+		this.price=price;
 		
 		SimpleDateFormat date= new SimpleDateFormat("dd-MM-yyyy");
 		dob =date.parse(dobth);
@@ -43,6 +47,22 @@ public class Magazines {
 		this.dob = dob;
 	}
 
+	public int getPages() {
+		return pages;
+	}
+
+	public void setPages(int pages) {
+		this.pages = pages;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public int getRackno() {
 		return rackno;
 	}
@@ -53,7 +73,10 @@ public class Magazines {
 
 	@Override
 	public String toString() {
-		return "Magazines [magazine=" + name+ ", dob=" + dob + ", rackno=" + rackno + "]";
+		return "Magazines [name=" + name + ", dob=" + dob + ", pages=" + pages + ", price=" + price + ", rackno="
+				+ rackno + "]";
 	}
+
+	
 	
 }
